@@ -19,23 +19,18 @@ const generateCards = (amountCardToAdd) => {
 
   for (let i = 0; i < amountCard; i++) {
     cardTemplate.push(`<li class="cards-board__card-item"><div class="front-face face">
-<img src="./assets/front.png" alt="" aria-hidden="true">
-</div>
-<div class="back-face face">
-<img src="./assets/${imgsCard[i]}" alt="" aria-hidden="true">
-</div>
-</li>`)
-    cardTemplate.push(`<li class="cards-board__card-item">
-<div class="front-face face">
-<img src="./assets/front.png" alt="" aria-hidden="true">
-</div>
-<div class="back-face face">
-<img src="./assets/${imgsCard[i]}" alt="" aria-hidden="true">
-</div>
-</li>`)
+                      <img src="./assets/front.png" alt="" aria-hidden="true">
+                      </div>
+                      <div class="back-face face">
+                      <img src="./assets/${imgsCard[i]}" alt="" aria-hidden="true">
+                      </div>
+                      </li>`)
   }
 
+  let [...cardsClone] = cardTemplate
+  cardTemplate = cardTemplate.concat(cardsClone)
   cardTemplate.sort(comparador)
+
   return cardTemplate
 }
 
@@ -43,7 +38,7 @@ const addCardBoard = (cardsItem) => {
   let cardBoardTemplate = '';
   let cards = cardsItem
   cards.forEach(card => {
-    cardBoardTemplate+=card;
+    cardBoardTemplate += card;
   });
   cardList.innerHTML = cardBoardTemplate;
 }
@@ -59,5 +54,3 @@ while (true) {
     }
   }
 }
-
-console.log(amountCard)
