@@ -27,7 +27,7 @@ ul {
 }
 
 .section-primary {
-  max-width: 1110px;
+  max-width: 900px;
   margin: 0 auto;
   display: grid;
 }
@@ -42,15 +42,12 @@ ul {
   margin-top: 40px;
 }
 
-.cards-board {
-  justify-self: center;
-}
-
 .cards-board__first-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 34px;
-  
+ 
 }
 
 .cards-board__card-item {
@@ -98,7 +95,13 @@ ul {
 }
 
 .cards-board__second-list {
-  margin-top: 34px;
+  /* margin-top: 34px;
   display: flex;
-  gap: 34px;
+  gap: 34px; */
+}
+
+@media (max-width:700px){
+  .section-primary h1 {
+    font-size: 2.2rem;
+  }
 }

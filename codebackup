@@ -1,0 +1,112 @@
+<li class="cards-board__card-item">
+        <div class="front-face face">
+          <img src="./assets/front.png" alt="" aria-hidden="true">
+        </div>
+        <div class="back-face face">
+          <img src="./assets/bobrossparrot.gif" alt="" aria-hidden="true">
+        </div>
+      </li>
+      <li class="cards-board__card-item">
+        <div class="front-face face">
+          <img src="./assets/front.png" alt="" aria-hidden="true">
+        </div>
+        <div class="back-face face">
+          <img src="./assets/explodyparrot.gif" alt="" aria-hidden="true">
+        </div>
+      </li>
+      <li class="cards-board__card-item">
+        <div class="front-face face">
+          <img src="./assets/front.png" alt="" aria-hidden="true">
+        </div>
+        <div class="back-face face">
+          <img src="./assets/fiestaparrot.gif" alt="" aria-hidden="true">
+        </div>
+      </li>
+      <li class="cards-board__card-item">
+        <div class="front-face face">
+          <img src="./assets/front.png" alt="" aria-hidden="true">
+        </div>
+        <div class="back-face face">
+          <img src="./assets/fiestaparrot.gif" alt="" aria-hidden="true">
+        </div>
+      </li>
+      <li class="cards-board__card-item">
+        <div class="front-face face">
+          <img src="./assets/front.png" alt="" aria-hidden="true">
+        </div>
+        <div class="back-face face">
+          <img src="./assets/explodyparrot.gif" alt="" aria-hidden="true">
+        </div>
+      </li>
+      <li class="cards-board__card-item">
+        <div class="front-face face">
+          <img src="./assets/front.png" alt="" aria-hidden="true">
+        </div>
+        <div class="back-face face">
+          <img src="./assets/bobrossparrot.gif" alt="" aria-hidden="true">
+        </div>
+      </li>
+      <li class="cards-board__card-item">
+        <div class="front-face face">
+          <img src="./assets/front.png" alt="" aria-hidden="true">
+        </div>
+        <div class="back-face face">
+          <img src="./assets/fiestaparrot.gif" alt="" aria-hidden="true">
+        </div>
+      </li>
+      <li class="cards-board__card-item">
+        <div class="front-face face">
+          <img src="./assets/front.png" alt="" aria-hidden="true">
+        </div>
+        <div class="back-face face">
+          <img src="./assets/explodyparrot.gif" alt="" aria-hidden="true">
+        </div>
+      </li>
+      <li class="cards-board__card-item">
+        <div class="front-face face">
+          <img src="./assets/front.png" alt="" aria-hidden="true">
+        </div>
+        <div class="back-face face">
+          <img src="./assets/bobrossparrot.gif" alt="" aria-hidden="true">
+        </div>
+      </li>
+      <li class="cards-board__card-item">
+        <div class="front-face face">
+          <img src="./assets/front.png" alt="" aria-hidden="true">
+        </div>
+        <div class="back-face face">
+          <img src="./assets/fiestaparrot.gif" alt="" aria-hidden="true">
+        </div>
+      </li>
+      <li class="cards-board__card-item">
+        <div class="front-face face">
+          <img src="./assets/front.png" alt="" aria-hidden="true">
+        </div>
+        <div class="back-face face">
+          <img src="./assets/explodyparrot.gif" alt="" aria-hidden="true">
+        </div>
+      </li>
+      <li class="cards-board__card-item">
+        <div class="front-face face">
+          <img src="./assets/front.png" alt="" aria-hidden="true">
+        </div>
+        <div class="back-face face">
+          <img src="./assets/bobrossparrot.gif" alt="" aria-hidden="true">
+        </div>
+      </li>
+      <li class="cards-board__card-item">
+        <div class="front-face face">
+          <img src="./assets/front.png" alt="" aria-hidden="true">
+        </div>
+        <div class="back-face face">
+          <img src="./assets/fiestaparrot.gif" alt="" aria-hidden="true">
+        </div>
+      </li>
+      <li class="cards-board__card-item">
+        <div class="front-face face">
+          <img src="./assets/front.png" alt="" aria-hidden="true">
+        </div>
+        <div class="back-face face">
+          <img src="./assets/explodyparrot.gif" alt="" aria-hidden="true">
+        </div>
+      </li>
