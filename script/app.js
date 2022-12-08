@@ -1,7 +1,8 @@
 let amountCard;
 let isFirstCardTurned = false;
 let cardTurnedObj = [];
-const cardList = document.querySelector('.cards-board__first-list')
+let moves = 0;
+const cardList = document.querySelector('.cards-board__first-list');
 
 function comparador() {
   return Math.random() - 0.5;
@@ -37,6 +38,18 @@ function turnOffCards() {
   activeClick()
 }
 
+const checkWinner = () => {
+  const amountCardsRight = document.querySelectorAll('.turned');
+
+  if (amountCardsRight.length === amountCard) {
+    alert(`Você ganhou em ${moves} jogadas!`)
+    document.location.reload();
+  }
+  else {
+    activeClick()
+  }
+}
+
 const generateCards = amountCardToAdd => {
   let amountCard = amountCardToAdd / 2
   let cardTemplate = [];
@@ -47,7 +60,7 @@ const generateCards = amountCardToAdd => {
     'revertitparrot.gif',
     'tripletsparrot.gif',
     'unicornparrot.gif']
-    imgsCard.sort(comparador)
+  imgsCard.sort(comparador)
 
   for (let i = 0; i < amountCard; i++) {
     cardTemplate.push(`<li class="cards-board__card-item item${i}"><div class="front-face face">
@@ -93,19 +106,19 @@ const cardClick = (event) => {
         cardTurnedObj[1].children[0].classList.add('ocultFront')
         cardTurnedObj[1].children[1].classList.add('showBack') // Tem como eu criar uma referencia para
         let cardTurnClass = cardTurnedObj[0].classList[1];
-
         if (cardTurnedObj[1].classList.contains(cardTurnClass)) {
           cardTurnedObj[1].classList.add('turned')
           cardTurnedObj[0].classList.add('turned')
-          activeClick()
+          setTimeout(checkWinner, 300)
           console.log(document.querySelectorAll('.turned'))
         } else {
           setTimeout(() => {
             turnOffCards()
           }, 1000)
         }
-      }, 300)
+      }, 100)
     }
+    moves++
   }
 }
 
