@@ -76,12 +76,16 @@ const addCardBoard = cardsItem => {
 }
 
 const cardClick = (event) => {
+  bloco1:{
   if (!isFirstCardTurned) {
     event.currentTarget.children[0].classList.add('ocultFront')
     event.currentTarget.children[1].classList.add('showBack')
     isFirstCardTurned = true;
     cardTurnedObj.push(event.currentTarget)
   } else {
+    if(event.currentTarget === cardTurnedObj[0] ){
+      break bloco1;
+    }
     cardTurnedObj.push(event.currentTarget)
     disableClick()
     setTimeout(() => {
@@ -101,6 +105,7 @@ const cardClick = (event) => {
       }
     }, 300)
   }
+}
 }
 
 while (true) {
