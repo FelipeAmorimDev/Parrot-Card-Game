@@ -3,6 +3,7 @@ let isFirstCardTurned = false;
 let cardTurnedObj = [];
 let moves = 0;
 const cardList = document.querySelector('.cards-board__first-list');
+const closedParagrafh = document.querySelector('.game-closed');
 
 function comparador() {
   return Math.random() - 0.5;
@@ -16,7 +17,7 @@ function activeClick() {
   })
   isFirstCardTurned = false
   cardTurnedObj.shift()
-  cardTurnedObj.shift()
+  cardTurnedObj.shift() // arruma uma forma melhor para limpar o array
 }
 
 function disableClick() {
@@ -40,13 +41,20 @@ function turnOffCards() {
 
 const checkWinner = () => {
   const amountCardsRight = document.querySelectorAll('.turned');
-
-  if (amountCardsRight.length === amountCard) {
+  let amountToInt = parseInt(amountCard)
+  if (amountCardsRight.length === amountToInt) {
     alert(`Você ganhou em ${moves} jogadas!`)
     document.location.reload();
-  }
-  else {
+  }else {
     activeClick()
+  }
+}
+
+function close_window() {
+  if (confirm("Fechar o jogo?")) {
+    closedParagrafh.innerHTML = "Jogo Finalizado, caso queira iniciar novamente apenas atualize a pagina ou digite novamente a URL!"
+  }else {
+    location.reload();
   }
 }
 
@@ -122,15 +130,30 @@ const cardClick = (event) => {
   }
 }
 
+
 while (true) {
-  amountCard = parseInt(prompt(`Digite a quantidade de cartas a serem geradas! 
-  lembrando: De 4 a 14 cartas apenas numeros pares.`))
-  if (!isNaN(amountCard)) {
-    if ((amountCard % 2 === 0 && amountCard <= 14)) {
-      let cardsRandom = generateCards(amountCard)
+  amountCard = prompt(`Seja bem-vindo ao Parrot Card Game!
+
+Para começar o jogo digite um número valido.
+Lembrando: Apenas os valores pares de 4 a 14, incluindo ambos.
+
+Obs:Caso queira sair escreva: Sair
+
+Bom jogo!
+
+`)
+  amountToInt = parseInt(amountCard)
+
+  if (!isNaN(amountToInt) || amountCard != 'Sair') {
+    if ((amountToInt % 2 === 0 && amountToInt <= 14 && amountToInt > 3)) {
+      let cardsRandom = generateCards(amountToInt)
       addCardBoard(cardsRandom);
       break;
     }
+  }
+  else {
+    close_window()
+    break;
   }
 }
 

@@ -32,6 +32,13 @@ ul {
   display: grid;
 }
 
+.game-closed {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: #5b8776;
+  font-size: 1.4rem;
+}
+
 .section-primary h1 {
   text-align: center;
   font-family: 'Roboto', sans-serif;
