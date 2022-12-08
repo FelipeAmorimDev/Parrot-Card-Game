@@ -47,6 +47,7 @@ const generateCards = amountCardToAdd => {
     'revertitparrot.gif',
     'tripletsparrot.gif',
     'unicornparrot.gif']
+    imgsCard.sort(comparador)
 
   for (let i = 0; i < amountCard; i++) {
     cardTemplate.push(`<li class="cards-board__card-item item${i}"><div class="front-face face">
@@ -76,36 +77,36 @@ const addCardBoard = cardsItem => {
 }
 
 const cardClick = (event) => {
-  bloco1:{
-  if (!isFirstCardTurned) {
-    event.currentTarget.children[0].classList.add('ocultFront')
-    event.currentTarget.children[1].classList.add('showBack')
-    isFirstCardTurned = true;
-    cardTurnedObj.push(event.currentTarget)
-  } else {
-    if(event.currentTarget === cardTurnedObj[0] ){
-      break bloco1;
-    }
-    cardTurnedObj.push(event.currentTarget)
-    disableClick()
-    setTimeout(() => {
-      cardTurnedObj[1].children[0].classList.add('ocultFront')
-      cardTurnedObj[1].children[1].classList.add('showBack') // Tem como eu criar uma referencia para
-      let cardTurnClass = cardTurnedObj[0].classList[1];
-
-      if (cardTurnedObj[1].classList.contains(cardTurnClass)) {
-        cardTurnedObj[1].classList.add('turned')
-        cardTurnedObj[0].classList.add('turned')
-        activeClick()
-        console.log(document.querySelectorAll('.turned'))
-      } else {
-        setTimeout(() => {
-          turnOffCards()
-        }, 1000)
+  bloco1: {
+    if (!isFirstCardTurned) {
+      event.currentTarget.children[0].classList.add('ocultFront')
+      event.currentTarget.children[1].classList.add('showBack')
+      isFirstCardTurned = true;
+      cardTurnedObj.push(event.currentTarget)
+    } else {
+      if (event.currentTarget === cardTurnedObj[0]) {
+        break bloco1;
       }
-    }, 300)
+      cardTurnedObj.push(event.currentTarget)
+      disableClick()
+      setTimeout(() => {
+        cardTurnedObj[1].children[0].classList.add('ocultFront')
+        cardTurnedObj[1].children[1].classList.add('showBack') // Tem como eu criar uma referencia para
+        let cardTurnClass = cardTurnedObj[0].classList[1];
+
+        if (cardTurnedObj[1].classList.contains(cardTurnClass)) {
+          cardTurnedObj[1].classList.add('turned')
+          cardTurnedObj[0].classList.add('turned')
+          activeClick()
+          console.log(document.querySelectorAll('.turned'))
+        } else {
+          setTimeout(() => {
+            turnOffCards()
+          }, 1000)
+        }
+      }, 300)
+    }
   }
-}
 }
 
 while (true) {
