@@ -1,9 +1,7 @@
 let amountCard;
 let isFirstCardTurned = false;
 let cardTurnedObj = [];
-
 const cardList = document.querySelector('.cards-board__first-list')
-
 
 function comparador() {
   return Math.random() - 0.5;
@@ -11,6 +9,7 @@ function comparador() {
 
 function activeClick() {
   const cards = document.querySelectorAll("li.cards-board__card-item:not(.turned)")
+
   cards.forEach(element => {
     element.addEventListener('click', cardClick)
   })
@@ -21,6 +20,7 @@ function activeClick() {
 
 function disableClick() {
   const cards = document.querySelectorAll("li.cards-board__card-item")
+
   cards.forEach(element => {
     element.removeEventListener('click', cardClick)
   })
@@ -29,6 +29,7 @@ function disableClick() {
 function turnOffCards() {
   let firstCard = cardTurnedObj[0]
   let secondCard = cardTurnedObj[1]
+
   firstCard.children[0].classList.remove('ocultFront')
   firstCard.children[1].classList.remove('showBack')
   secondCard.children[0].classList.remove('ocultFront')
@@ -56,8 +57,8 @@ const generateCards = amountCardToAdd => {
                       </div>
                       </li>`)
   }
-
   let [...cardsClone] = cardTemplate
+
   cardTemplate = cardTemplate.concat(cardsClone)
   cardTemplate.sort(comparador)
 
@@ -67,6 +68,7 @@ const generateCards = amountCardToAdd => {
 const addCardBoard = cardsItem => {
   let cardBoardTemplate = '';
   let cards = cardsItem
+
   cards.forEach(card => {
     cardBoardTemplate += card;
   });
@@ -74,33 +76,31 @@ const addCardBoard = cardsItem => {
 }
 
 const cardClick = (event) => {
-
   if (!isFirstCardTurned) {
     event.currentTarget.children[0].classList.add('ocultFront')
     event.currentTarget.children[1].classList.add('showBack')
     isFirstCardTurned = true;
     cardTurnedObj.push(event.currentTarget)
-  }
-  else {
-    disableClick()
+  } else {
     cardTurnedObj.push(event.currentTarget)
-    cardTurnedObj[1].children[0].classList.add('ocultFront')
-    cardTurnedObj[1].children[1].classList.add('showBack') // Tem como eu criar uma referencia para
+    disableClick()
+    setTimeout(() => {
+      cardTurnedObj[1].children[0].classList.add('ocultFront')
+      cardTurnedObj[1].children[1].classList.add('showBack') // Tem como eu criar uma referencia para
+      let cardTurnClass = cardTurnedObj[0].classList[1];
 
-    let cardTurnClass = cardTurnedObj[0].classList[1];
-
-    if (cardTurnedObj[1].classList.contains(cardTurnClass)) {
-      cardTurnedObj[1].classList.add('turned')
-      cardTurnedObj[0].classList.add('turned')
-      activeClick()
-    }
-    else {
-      setTimeout(() => {
-        turnOffCards()
-      }, 1000)
-    }
+      if (cardTurnedObj[1].classList.contains(cardTurnClass)) {
+        cardTurnedObj[1].classList.add('turned')
+        cardTurnedObj[0].classList.add('turned')
+        activeClick()
+        console.log(document.querySelectorAll('.turned'))
+      } else {
+        setTimeout(() => {
+          turnOffCards()
+        }, 1000)
+      }
+    }, 300)
   }
-
 }
 
 while (true) {
